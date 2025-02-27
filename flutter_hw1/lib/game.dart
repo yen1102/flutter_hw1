@@ -30,16 +30,14 @@ class JumpGameState extends State<JumpGame> {
   double obstacleX = 1;
   bool gameOver = false;
   double obstacleHeight = 200;
-  double gapHeight = 150; // 障礙物之間的間隙高度
+  double gapHeight = 150;
   int score = 0;
   int bestScore = 0;
-  final AudioCache _audioCache = AudioCache(
-    prefix: 'assets/sounds/',
-  ); // 使用 AudioCache 播放音效
+  final AudioCache _audioCache = AudioCache(prefix: 'assets/sounds/');
 
   void jump() {
     if (!gameOver) {
-      _audioCache.play('jump.mp3'); // 播放跳躍音效
+      _audioCache.play('jump.mp3');
       setState(() {
         time = 0;
         initialHeight = characterY;
@@ -68,7 +66,7 @@ class JumpGameState extends State<JumpGame> {
       }
 
       if (characterY > 1 || characterY < -1) {
-        _audioCache.play('game_over.mp3'); // 播放遊戲結束音效
+        _audioCache.play('game_over.mp3');
         setState(() {
           timer.cancel();
           gameHasStarted = false;
@@ -87,7 +85,7 @@ class JumpGameState extends State<JumpGame> {
                     (widget.characterHeight /
                         MediaQuery.of(context).size.height) +
                     (gapHeight / MediaQuery.of(context).size.height)) {
-          _audioCache.play('game_over.mp3'); // 播放遊戲結束音效
+          _audioCache.play('game_over.mp3');
           setState(() {
             timer.cancel();
             gameHasStarted = false;

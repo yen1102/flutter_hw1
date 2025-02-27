@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  audioplayers: ^0.20.1 # 更新 audioplayers 依賴版本
+  audioplayers: ^0.20.1 
 
 dev_dependencies:
   flutter_test:
